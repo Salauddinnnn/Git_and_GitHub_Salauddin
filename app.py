@@ -33,6 +33,19 @@ def api():
 def home():
     return render_template("index.html")
 
+@app.route("/submittodoitem", methods=["POST"])
+def submit_todo_item():
+    item_name = request.form.get("itemName")
+    item_description = request.form.get("itemDescription")
+
+    todo_item = {
+        "itemName": item_name,
+        "itemDescription": item_description
+    }
+
+    db["todo_items"].insert_one(todo_item)
+
+    return redirect(url_for("success"))
 
 # Task 2: Submit form data to MongoDB Atlas
 @app.route("/submit", methods=["POST"])
