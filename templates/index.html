@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Flask MongoDB Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Page</title>
 </head>
 <body>
+    <h1>To-Do Item</h1>
 
-    <h1>Submit Student Data</h1>
+    <form method="POST" action="/submittodoitem">
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" name="itemName" required>
 
-    <form method="POST" action="/submit">
-        <label>Name:</label>
-        <input type="text" name="name" required>
         <br><br>
 
-        <label>Email:</label>
-        <input type="email" name="email" required>
+        <label for="itemDescription">Item Description:</label>
+        <textarea id="itemDescription" name="itemDescription" required></textarea>
+
         <br><br>
 
-        <label>Course:</label>
-        <input type="text" name="course" required>
-        <br><br>
-
-        <button type="submit">Submit</button>
+        <button type="submit">Submit To-Do Item</button>
     </form>
-
 </body>
 </html>
